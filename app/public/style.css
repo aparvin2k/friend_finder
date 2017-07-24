@@ -27,7 +27,7 @@ h1, h2 {
   color: DarkBlue;
 }
 
-label, h3, h4, h5 {
+label, h3, h4, h5, p {
   color: DarkBlue;
   font-weight: bolder;
   font-size: 125%;
