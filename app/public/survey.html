@@ -203,7 +203,32 @@
     <script type="text/javascript">
         $("#add-btn").on("click", function() {
             event.preventDefault();
-            var newFriend = {
+            if (!$("#name").val().trim()) {
+                alert("Please enter your name.");
+            } else if (!$("#photo").val().trim()) {
+                alert("Please enter a photo link");
+            } else if ($("#q1").val() === "select") {
+                alert("Please enter a value for question 1.");
+            } else if ($("#q2").val() === "select") {
+                alert("Please enter a value for question 2.");
+            } else if ($("#q3").val() === "select") {
+                alert("Please enter a value for question 3.");
+            } else if ($("#q4").val() === "select") {
+                alert("Please enter a value for question 4.");
+            } else if ($("#q5").val() === "select") {
+                alert("Please enter a value for question 5.");
+            } else if ($("#q6").val() === "select") {
+                alert("Please enter a value for question 6.");
+            } else if ($("#q7").val() === "select") {
+                alert("Please enter a value for question 7.");
+            } else if ($("#q8").val() === "select") {
+                alert("Please enter a value for question 8.");
+            } else if ($("#q9").val() === "select") {
+                alert("Please enter a value for question 9.");
+            } else if ($("#q10").val() === "select") {
+                alert("Please enter a value for question 10.");
+            } else  if ($("#name").val().trim() && $("#photo").val().trim() && [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val() ]){
+                var newFriend = {
                 name: $("#name").val().trim(),
                 photo: $("#photo").val().trim(),
                 scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val() ]
@@ -214,11 +239,12 @@
                     console.log(data);
                     $('#caption').text(data.name);
                     $('#imagepreview').attr('src', data.photo);
-                    $('#imagemodal').modal('show');
+                    $('#imagemodal').modal('toggle');
                 });
             $("#name").val("");
             $("#photo").val("");
             [$("#q1").val(""), $("#q2").val(""), $("#q3").val(""), $("#q4").val(""), $("#q5").val(""), $("#q6").val(""), $("#q7").val(""), $("#q8").val(""), $("#q9").val(""), $("#q10").val("") ]
+            }
         });
     </script>
 </body>
